@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./app.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main class="container">
+      <div class="block">
+        <h1>Cotiza Criptomonedas al Instante</h1>
+        <div class="divisas">
+            <div class="crypto">
+                <label for="crypto">Crypto-moneda</label>
+                <select name="crypto" id="crypto">
+                  <option value="BTC">BITCOIN</option>
+                  <option value="ETH">ETHEREUM</option>
+                  <option value="XRP">RIPPLE</option>
+                  <option value="ETC">ETHEREUM CLASSIC</option>
+                  <option value="BCH">BITCOIN CASH</option>
+                  <option value="EOS">EOS</option>
+                  <option value="LTC">LITECOIN</option>
+                  <option value="XTZ">TEZOS</option>
+                  <option value="OKB">OKEX</option>
+                  <option value="ADA">CARDANO</option>
+
+                </select>
+            </div>
+            <div class="fiat">
+                <label for="fiat">Moneda local</label>
+                <select name="fiat" id="fiat">
+                    <option value="USD">Dolar Estadounidense</option>
+                    <option value="PEN">Sol Peruano</option>
+                    <option value="EUR">Euro</option>
+                    <option value="MXN">Peso Mexicano</option>
+                    <option value="ARS">Peso Argentino</option>
+                    <option value="BRL">Real Brasilero</option>
+                    <option value="CLP">Peso Chileno</option>
+                </select>
+            </div>
+            <button class="btn secundario">Cotizar</button>
+        </div>
+        <div id="resultado">
+          
+        </div>
+      </div>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
