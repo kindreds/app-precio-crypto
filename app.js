@@ -5,6 +5,9 @@ const listaCrypto = document.querySelector('#crypto');
 const listaFiat = document.querySelector('#fiat');
 const button = document.querySelector('button');
 const resultado = document.querySelector('#resultado');
+const spin = document.querySelector('#spin');
+const notificacion = document.querySelector('.notificacion');
+
 
 const cotizar = async (from , to )=> {
   const url   = `https://min-api.cryptocompare.com/data/pricemulti?fsyms=${from}&tsyms=${to}&api_key=${API_KEY}`;
@@ -14,6 +17,8 @@ const cotizar = async (from , to )=> {
 }
 
 const consulta = ()=> {
+  notificacion.style.display = 'none';
+  spin.style.display = 'block';
   const posicionF = listaFiat.options.selectedIndex;
   const opcionF = listaFiat.options[posicionF].value;
 
@@ -24,16 +29,18 @@ const consulta = ()=> {
 }
 
 const imprimir = (c, f, r)=> {
+  
   const usFormat = new Intl.NumberFormat('en-US', {
     style: 'currency', 
     currency: f,
   });
   let html = `
-  <div class="notificacion terceario">
     <p>El valor de ${c} en ${f} es:</p>
-    <p>${usFormat.format(r)}</p>
-  </div>`;
-  resultado.innerHTML = html;
+    <p>${usFormat.format(r)}</p>`;
+    
+    spin.style.display = 'none';
+    notificacion.style.display = 'block';
+    notificacion.innerHTML = html;
 }
 
 button.addEventListener( 'click', consulta )
